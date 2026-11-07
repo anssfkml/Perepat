@@ -588,10 +588,10 @@ open(os.path.join(ROOT, "compositions/endcard.html"), "w").write(
 WATERMARK = "aniskamalrealty"
 wm_css = """
       #wm { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; pointer-events: none; }
-      #wm-text { position: absolute; left: 60px; top: 924px; width: 960px; text-align: center;
-        font-weight: 900; font-size: 72px; line-height: 1; letter-spacing: 0;
-        color: rgba(255,255,255,0.24); -webkit-text-stroke: 2px rgba(0,0,0,0.16); paint-order: stroke fill;
-        text-shadow: 0 2px 12px rgba(0,0,0,0.12); white-space: nowrap; }
+      #wm-text { position: absolute; left: 60px; top: 936px; width: 960px; text-align: center;
+        font-weight: 900; font-size: 52px; line-height: 1; letter-spacing: 0.02em;
+        color: rgba(255,255,255,0.17); -webkit-text-stroke: 1.5px rgba(0,0,0,0.11); paint-order: stroke fill;
+        text-shadow: 0 2px 10px rgba(0,0,0,0.08); white-space: nowrap; }
 """
 wm_body = f"""    <div id="wm" class="clip" data-start="0" data-duration="{a(TOTAL)}" data-layout-ignore>
       <div id="wm-text" data-var-text="watermark">{WATERMARK}</div>
