@@ -1,0 +1,61 @@
+<template>
+  <style>
+      #root { position: absolute; inset: 0; font-family: 'Montserrat', sans-serif; color: #fff; }
+      #root, #root * { box-sizing: border-box; }
+      :root { --accent: #FFD60A; --ink: #FFFFFF; --dark: rgba(14, 16, 22, 0.88); --green: #128045; --red: #E5383B; }
+
+      .hk-wrap { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; }
+      #hk-shade { position: absolute; left: 0; top: 0; width: 1080px; height: 1000px;
+        background: linear-gradient(180deg, rgba(0,0,0,0.62) 0%, rgba(0,0,0,0.35) 55%, rgba(0,0,0,0) 100%); }
+      #hk-kicker { position: absolute; left: 0; top: 196px; width: 1080px; text-align: center; }
+      #hk-kicker span { display: inline-block; background: var(--accent); color: #111; font-weight: 900;
+        font-size: 40px; letter-spacing: 0.06em; padding: 12px 28px; border-radius: 999px; }
+      #hk-q { position: absolute; left: 60px; top: 290px; width: 960px; text-align: center; font-weight: 900;
+        font-size: 88px; line-height: 1.02; letter-spacing: -0.02em; text-transform: uppercase;
+        text-shadow: 0 6px 24px rgba(0,0,0,0.55); }
+      #hk-q em { font-style: normal; color: var(--accent); }
+      #hk-from { position: absolute; left: 0; top: 330px; width: 1080px; text-align: center; font-weight: 800;
+        font-size: 50px; letter-spacing: 0.14em; opacity: 0; text-shadow: 0 4px 16px rgba(0,0,0,0.6); }
+      #hk-price { position: absolute; left: 0; top: 400px; width: 1080px; text-align: center; opacity: 0;
+        font-family: 'Archivo Black', sans-serif; font-size: 178px; line-height: 1; color: var(--accent);
+        letter-spacing: -0.03em; text-shadow: 0 10px 40px rgba(0,0,0,0.55); }
+      #hk-price small { font-size: 96px; margin-right: 8px; }
+      #hk-net { position: absolute; left: 700px; top: 590px; opacity: 0; background: var(--red); color: #fff;
+        font-family: 'Archivo Black', sans-serif; font-size: 64px; padding: 6px 26px; border-radius: 14px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.4); }
+      #hk-monthly { position: absolute; left: 0; top: 720px; width: 1080px; text-align: center; opacity: 0; }
+      #hk-monthly span { display: inline-block; background: var(--dark); border: 4px solid var(--accent);
+        color: #fff; font-weight: 800; font-size: 54px; padding: 18px 36px; border-radius: 26px; }
+      #hk-monthly b { color: var(--accent); font-weight: 900; }
+
+  </style>
+  <div id="root" data-composition-id="hook" data-width="1080" data-height="1920" data-duration="10.2">
+    <div id="hk-shade" class="clip" data-start="0" data-duration="10.2" data-layout-ignore></div>
+    <div id="hk-kicker" class="clip" data-start="0" data-duration="10.2"><span>RUMAH TERES &#8226; PEREPAT</span></div>
+    <div id="hk-q" class="clip" data-start="0" data-duration="2.333"><div id="hk-q-in">Rumah macam ni<br/><em>berapa harga?</em></div></div>
+    <div id="hk-from" class="clip" data-start="2.333" data-duration="7.867">HARGA DARI</div>
+    <div id="hk-price" class="clip" data-start="2.333" data-duration="7.867"><small>RM</small><span id="hk-num">0</span></div>
+    <div id="hk-net" class="clip" data-start="2.333" data-duration="7.867">NET</div>
+    <div id="hk-monthly" class="clip" data-start="2.333" data-duration="7.867"><span>Bulanan dari <b>~RM1.7K</b></span></div>
+  </div>
+  <script>
+    (function () {
+      const tl = gsap.timeline({ paused: true });
+      // frame 0 already carries the question (thumbnail + hook)
+      tl.fromTo("#hk-q-in", { opacity: 1, scale: 1 }, { opacity: 0, scale: 0.92, filter: "blur(8px)", duration: 0.18, ease: "power3.in" }, 2.133);
+      tl.fromTo("#hk-from", { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.4, ease: "expo.out" }, 2.333);
+      tl.fromTo("#hk-price", { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.35, ease: "back.out(1.6)" }, 3.183);
+      const num = { v: 0 };
+      const el = document.getElementById("hk-num");
+      tl.fromTo(num, { v: 0 }, { v: 360000, duration: 3.3, ease: "power2.out",
+        onUpdate: () => { el.textContent = (Math.round(num.v / 1000) * 1000).toLocaleString("en-US"); } }, 3.233);
+      tl.fromTo("#hk-net", { opacity: 0, scale: 2.4, rotation: -14 }, { opacity: 1, scale: 1, rotation: -8, duration: 0.22, ease: "power4.out" }, 6.633);
+      tl.fromTo("#hk-price", { y: 0 }, { y: -10, duration: 0.08, yoyo: true, repeat: 1, ease: "power1.inOut" }, 6.653);
+      tl.fromTo("#hk-monthly", { opacity: 0, y: 60 }, { opacity: 1, y: 0, duration: 0.4, ease: "expo.out" }, 8.517);
+      // leave together into the tour
+      tl.to(["#hk-from", "#hk-price", "#hk-net", "#hk-monthly", "#hk-kicker span"], { opacity: 0, y: -40, duration: 0.2, ease: "power3.in", stagger: 0.02 }, 9.92);
+      tl.to("#hk-shade", { opacity: 0, duration: 0.25, ease: "power2.in" }, 9.92);
+      window.__timelines["hook"] = tl;
+    })();
+  </script>
+</template>

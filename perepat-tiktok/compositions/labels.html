@@ -1,0 +1,98 @@
+<template>
+  <style>
+      #root { position: absolute; inset: 0; font-family: 'Montserrat', sans-serif; color: #fff; }
+      #root, #root * { box-sizing: border-box; }
+      :root { --accent: #FFD60A; --ink: #FFFFFF; --dark: rgba(14, 16, 22, 0.88); --green: #128045; --red: #E5383B; }
+
+      .chip { position: absolute; left: 56px; top: 196px; }
+      .chip span { display: inline-flex; align-items: center; gap: 16px; background: var(--dark); color: #fff;
+        font-weight: 900; font-size: 44px; letter-spacing: 0.05em; padding: 14px 28px 14px 22px; border-radius: 18px; }
+      .chip i { display: inline-block; width: 14px; height: 44px; border-radius: 7px; background: var(--accent); }
+      .callout { position: absolute; left: 60px; width: 880px; text-align: center; }
+      .callout span { display: inline-block; font-weight: 900; color: #111; background: var(--accent);
+        font-size: 58px; padding: 16px 32px; border-radius: 22px; box-shadow: 0 12px 34px rgba(0,0,0,0.35); }
+      .callout.dark span { background: var(--dark); color: #fff; border: 4px solid var(--accent); }
+      .callout.green span { background: var(--green); color: #fff; }
+      .big { position: absolute; left: 60px; width: 960px; text-align: center; font-weight: 900; text-transform: uppercase;
+        font-size: 120px; line-height: 0.95; letter-spacing: -0.02em; color: #fff; text-shadow: 0 8px 30px rgba(0,0,0,0.5); }
+      .big em { font-style: normal; color: var(--accent); }
+      #lb-toggle { position: absolute; left: 60px; top: 330px; width: 880px; text-align: center; }
+      #lb-toggle .opt { display: inline-block; font-weight: 900; font-size: 44px; padding: 14px 22px; border-radius: 22px;
+        background: var(--dark); color: rgba(255,255,255,0.55); margin: 0 4px; }
+      #lb-toggle .or { display: inline-block; font-weight: 900; font-size: 38px; color: #fff; margin: 0 6px;
+        text-shadow: 0 3px 12px rgba(0,0,0,0.7); }
+
+  </style>
+  <div id="root" data-composition-id="labels" data-width="1080" data-height="1920" data-duration="67.3">
+    <div id="chip1" class="clip chip" data-start="10.3" data-duration="4.233" data-track-index="0"><span id="chip1-in"><i></i>RUMAH CONTOH</span></div>
+    <div id="chip2" class="clip chip" data-start="23.267" data-duration="1.9" data-track-index="1"><span id="chip2-in"><i></i>BILIK 1</span></div>
+    <div id="chip3" class="clip chip" data-start="25.233" data-duration="1.267" data-track-index="0"><span id="chip3-in"><i></i>BILIK AIR 1</span></div>
+    <div id="chip4" class="clip chip" data-start="26.533" data-duration="2.867" data-track-index="1"><span id="chip4-in"><i></i>RUANG TAMU</span></div>
+    <div id="chip5" class="clip chip" data-start="29.467" data-duration="1.167" data-track-index="0"><span id="chip5-in"><i></i>MEJA MAKAN</span></div>
+    <div id="chip6" class="clip chip" data-start="30.667" data-duration="2.267" data-track-index="1"><span id="chip6-in"><i></i>BILIK 2</span></div>
+    <div id="chip7" class="clip chip" data-start="33.133" data-duration="1.333" data-track-index="0"><span id="chip7-in"><i></i>BILIK AIR 2</span></div>
+    <div id="chip8" class="clip chip" data-start="34.533" data-duration="5.733" data-track-index="1"><span id="chip8-in"><i></i>BILIK 3</span></div>
+    <div id="chip9" class="clip chip" data-start="40.333" data-duration="14.533" data-track-index="0"><span id="chip9-in"><i></i>DAPUR</span></div>
+    <div id="chip10" class="clip chip" data-start="54.933" data-duration="5.767" data-track-index="1"><span id="chip10-in"><i></i>BELAKANG RUMAH</span></div>
+    <div id="lb-open" class="clip big" style="top:330px" data-start="21.883" data-duration="1.35" data-track-index="2"><div id="lb-open-1">Open</div><div id="lb-open-2"><em>Concept</em></div></div>
+    <div id="lb-corner" class="clip callout " style="top:320px" data-start="28.05" data-duration="1.35" data-track-index="2"><span id="lb-corner-in">UNIT CORNER</span></div>
+    <div id="lb-toggle" class="clip" data-start="36.6" data-duration="3.667" data-track-index="3"><div id="lb-toggle-in"><span id="lb-opt1" class="opt">SMALL OFFICE</span><span class="or">atau</span><span id="lb-opt2" class="opt">BEDROOM</span></div></div>
+    <div id="lb-dinding" class="clip callout dark" style="top:320px" data-start="42.4" data-duration="3.533" data-track-index="2"><span id="lb-dinding-in">Siap dengan dinding ni</span></div>
+    <div id="lb-sliding" class="clip callout " style="top:320px" data-start="51.017" data-duration="2.883" data-track-index="2"><span id="lb-sliding-in">+ Pasang sliding door</span></div>
+    <div id="lb-nice" class="clip callout green" style="top:330px" data-start="53.937" data-duration="0.93" data-track-index="2"><span id="lb-nice-in">VERY NICE!</span></div>
+    <div id="lb-peti" class="clip callout dark" style="top:320px" data-start="54.917" data-duration="1.133" data-track-index="2"><span id="lb-peti-in">Peti ais</span></div>
+    <div id="lb-mesin" class="clip callout dark" style="top:320px" data-start="56.05" data-duration="1.617" data-track-index="2"><span id="lb-mesin-in">Mesin basuh</span></div>
+    <div id="lb-tanah" class="clip callout dark" style="top:320px" data-start="57.767" data-duration="2.933" data-track-index="2"><span id="lb-tanah-in">Takde tanah belakang</span></div>
+    <div id="lb-lane" class="clip callout " style="top:440px" data-start="59.117" data-duration="1.583" data-track-index="2"><span id="lb-lane-in">&#8594; Terus back lane</span></div>
+  </div>
+  <script>
+    (function () {
+      const tl = gsap.timeline({ paused: true });
+      tl.fromTo("#chip1-in", { opacity: 0, x: -60 }, { opacity: 1, x: 0, duration: 0.35, ease: "expo.out" }, 10.3);
+      tl.to("#chip1-in", { opacity: 0, x: -30, duration: 0.15, ease: "power2.in" }, 14.363);
+      tl.fromTo("#chip2-in", { opacity: 0, x: -60 }, { opacity: 1, x: 0, duration: 0.35, ease: "expo.out" }, 23.267);
+      tl.to("#chip2-in", { opacity: 0, x: -30, duration: 0.15, ease: "power2.in" }, 24.997);
+      tl.fromTo("#chip3-in", { opacity: 0, x: -60 }, { opacity: 1, x: 0, duration: 0.35, ease: "expo.out" }, 25.233);
+      tl.to("#chip3-in", { opacity: 0, x: -30, duration: 0.15, ease: "power2.in" }, 26.33);
+      tl.fromTo("#chip4-in", { opacity: 0, x: -60 }, { opacity: 1, x: 0, duration: 0.35, ease: "expo.out" }, 26.533);
+      tl.to("#chip4-in", { opacity: 0, x: -30, duration: 0.15, ease: "power2.in" }, 29.23);
+      tl.fromTo("#chip5-in", { opacity: 0, x: -60 }, { opacity: 1, x: 0, duration: 0.35, ease: "expo.out" }, 29.467);
+      tl.to("#chip5-in", { opacity: 0, x: -30, duration: 0.15, ease: "power2.in" }, 30.463);
+      tl.fromTo("#chip6-in", { opacity: 0, x: -60 }, { opacity: 1, x: 0, duration: 0.35, ease: "expo.out" }, 30.667);
+      tl.to("#chip6-in", { opacity: 0, x: -30, duration: 0.15, ease: "power2.in" }, 32.763);
+      tl.fromTo("#chip7-in", { opacity: 0, x: -60 }, { opacity: 1, x: 0, duration: 0.35, ease: "expo.out" }, 33.133);
+      tl.to("#chip7-in", { opacity: 0, x: -30, duration: 0.15, ease: "power2.in" }, 34.297);
+      tl.fromTo("#chip8-in", { opacity: 0, x: -60 }, { opacity: 1, x: 0, duration: 0.35, ease: "expo.out" }, 34.533);
+      tl.to("#chip8-in", { opacity: 0, x: -30, duration: 0.15, ease: "power2.in" }, 40.097);
+      tl.fromTo("#chip9-in", { opacity: 0, x: -60 }, { opacity: 1, x: 0, duration: 0.35, ease: "expo.out" }, 40.333);
+      tl.to("#chip9-in", { opacity: 0, x: -30, duration: 0.15, ease: "power2.in" }, 54.697);
+      tl.fromTo("#chip10-in", { opacity: 0, x: -60 }, { opacity: 1, x: 0, duration: 0.35, ease: "expo.out" }, 54.933);
+      tl.to("#chip10-in", { opacity: 0, x: -30, duration: 0.15, ease: "power2.in" }, 60.53);
+      tl.fromTo("#lb-open-1", { opacity: 0, filter: "blur(10px)", y: 30 }, { opacity: 1, filter: "blur(0px)", y: 0, duration: 0.2, ease: "power4.out" }, 21.883);
+      tl.fromTo("#lb-open-2", { opacity: 0, filter: "blur(10px)", y: 30 }, { opacity: 1, filter: "blur(0px)", y: 0, duration: 0.2, ease: "power4.out" }, 22.183);
+      tl.to(["#lb-open-1", "#lb-open-2"], { opacity: 0, filter: "blur(8px)", duration: 0.15, stagger: 0.05, ease: "power2.in" }, 23.013);
+      tl.fromTo("#lb-corner-in", { opacity: 0, scale: 0.5 }, { opacity: 1, scale: 1, duration: 0.3, ease: "back.out(1.7)" }, 28.05);
+      tl.to("#lb-corner-in", { opacity: 0, scale: 0.9, duration: 0.15, ease: "power2.in" }, 29.23);
+      tl.fromTo("#lb-toggle-in", { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.35, ease: "expo.out" }, 36.6);
+      tl.fromTo("#lb-opt1", { backgroundColor: "rgba(14,16,22,0.88)", color: "rgba(255,255,255,0.55)" }, { backgroundColor: "#FFD60A", color: "#111111", duration: 0.12 }, 36.7);
+      tl.to("#lb-opt1", { backgroundColor: "rgba(14,16,22,0.88)", color: "rgba(255,255,255,0.55)", duration: 0.12 }, 39.733);
+      tl.fromTo("#lb-opt2", { backgroundColor: "rgba(14,16,22,0.88)", color: "rgba(255,255,255,0.55)" }, { backgroundColor: "#FFD60A", color: "#111111", duration: 0.12 }, 39.733);
+      tl.to("#lb-toggle-in", { opacity: 0, duration: 0.15, ease: "power2.in" }, 40.097);
+      tl.fromTo("#lb-dinding-in", { opacity: 0, scale: 0.5 }, { opacity: 1, scale: 1, duration: 0.3, ease: "back.out(1.7)" }, 42.4);
+      tl.to("#lb-dinding-in", { opacity: 0, scale: 0.9, duration: 0.15, ease: "power2.in" }, 45.763);
+      tl.fromTo("#lb-sliding-in", { opacity: 0, scale: 0.5 }, { opacity: 1, scale: 1, duration: 0.3, ease: "back.out(1.7)" }, 51.017);
+      tl.to("#lb-sliding-in", { opacity: 0, scale: 0.9, duration: 0.15, ease: "power2.in" }, 53.73);
+      tl.fromTo("#lb-nice-in", { opacity: 0, scale: 0.5 }, { opacity: 1, scale: 1, duration: 0.3, ease: "back.out(1.7)" }, 53.937);
+      tl.to("#lb-nice-in", { opacity: 0, scale: 0.9, duration: 0.15, ease: "power2.in" }, 54.697);
+      tl.fromTo("#lb-peti-in", { opacity: 0, scale: 0.5 }, { opacity: 1, scale: 1, duration: 0.3, ease: "back.out(1.7)" }, 54.917);
+      tl.to("#lb-peti-in", { opacity: 0, scale: 0.9, duration: 0.15, ease: "power2.in" }, 55.88);
+      tl.fromTo("#lb-mesin-in", { opacity: 0, scale: 0.5 }, { opacity: 1, scale: 1, duration: 0.3, ease: "back.out(1.7)" }, 56.05);
+      tl.to("#lb-mesin-in", { opacity: 0, scale: 0.9, duration: 0.15, ease: "power2.in" }, 57.497);
+      tl.fromTo("#lb-tanah-in", { opacity: 0, scale: 0.5 }, { opacity: 1, scale: 1, duration: 0.3, ease: "back.out(1.7)" }, 57.767);
+      tl.to("#lb-tanah-in", { opacity: 0, scale: 0.9, duration: 0.15, ease: "power2.in" }, 60.53);
+      tl.fromTo("#lb-lane-in", { opacity: 0, scale: 0.5 }, { opacity: 1, scale: 1, duration: 0.3, ease: "back.out(1.7)" }, 59.117);
+      tl.to("#lb-lane-in", { opacity: 0, scale: 0.9, duration: 0.15, ease: "power2.in" }, 60.53);
+      window.__timelines["labels"] = tl;
+    })();
+  </script>
+</template>

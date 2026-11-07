@@ -1,0 +1,7 @@
+assets/tour.mp4
+assets/*.mov
+renders/
+snapshots/
+node_modules/
+.hyperframes/
+assets/voice.m4a

@@ -1,0 +1,589 @@
+{
+ "total": 67.3,
+ "hook_end": 10.2,
+ "end_start": 62.8,
+ "tour": [
+  {
+   "key": "rumah",
+   "start": 10.2,
+   "dur": 4.3333,
+   "src": 12.4,
+   "src_end": 16.72,
+   "trans": "whoosh"
+  },
+  {
+   "key": "spec",
+   "start": 14.5333,
+   "dur": 6.8333,
+   "src": 17.12,
+   "src_end": 23.97,
+   "trans": "cut"
+  },
+  {
+   "key": "open",
+   "start": 21.3667,
+   "dur": 1.8667,
+   "src": 24.84,
+   "src_end": 26.72,
+   "trans": "zoom"
+  },
+  {
+   "key": "bilik1",
+   "start": 23.2333,
+   "dur": 1.9333,
+   "src": 33.08,
+   "src_end": 35.0,
+   "trans": "whoosh"
+  },
+  {
+   "key": "ba1",
+   "start": 25.1667,
+   "dur": 1.3333,
+   "src": 38.16,
+   "src_end": 39.5,
+   "trans": "cut"
+  },
+  {
+   "key": "tamu",
+   "start": 26.5,
+   "dur": 1.3667,
+   "src": 44.58,
+   "src_end": 45.95,
+   "trans": "whoosh"
+  },
+  {
+   "key": "corner",
+   "start": 27.8667,
+   "dur": 1.5333,
+   "src": 47.08,
+   "src_end": 48.62,
+   "trans": "punch"
+  },
+  {
+   "key": "makan",
+   "start": 29.4,
+   "dur": 1.2333,
+   "src": 49.22,
+   "src_end": 50.45,
+   "trans": "cut"
+  },
+  {
+   "key": "bilik2",
+   "start": 30.6333,
+   "dur": 1.7,
+   "src": 53.86,
+   "src_end": 55.55,
+   "trans": "whoosh"
+  },
+  {
+   "key": "ba2",
+   "start": 32.3333,
+   "dur": 3.1,
+   "src": 57.1,
+   "src_end": 60.2,
+   "trans": "punch"
+  },
+  {
+   "key": "bilik3",
+   "start": 35.4333,
+   "dur": 4.8333,
+   "src": 60.2,
+   "src_end": 65.05,
+   "trans": "cut"
+  },
+  {
+   "key": "dapur",
+   "start": 40.2667,
+   "dur": 2.0333,
+   "src": 65.74,
+   "src_end": 67.76,
+   "trans": "whoosh"
+  },
+  {
+   "key": "dinding",
+   "start": 42.3,
+   "dur": 3.6333,
+   "src": 68.4,
+   "src_end": 72.02,
+   "trans": "punch"
+  },
+  {
+   "key": "sliding",
+   "start": 45.9333,
+   "dur": 7.9667,
+   "src": 72.02,
+   "src_end": 80.0,
+   "trans": "cut"
+  },
+  {
+   "key": "nice",
+   "start": 53.9,
+   "dur": 0.9667,
+   "src": 81.3,
+   "src_end": 82.25,
+   "trans": "punch"
+  },
+  {
+   "key": "peti",
+   "start": 54.8667,
+   "dur": 2.8,
+   "src": 86.76,
+   "src_end": 89.56,
+   "trans": "whoosh"
+  },
+  {
+   "key": "belakang",
+   "start": 57.6667,
+   "dur": 1.7,
+   "src": 91.66,
+   "src_end": 93.36,
+   "trans": "punch"
+  },
+  {
+   "key": "lane",
+   "start": 59.3667,
+   "dur": 1.3333,
+   "src": 95.62,
+   "src_end": 96.95,
+   "trans": "cut"
+  },
+  {
+   "key": "cta",
+   "start": 60.7,
+   "dur": 2.1,
+   "src": 98.44,
+   "src_end": 100.55,
+   "trans": "whoosh"
+  }
+ ],
+ "captions": [
+  {
+   "start": 0.1,
+   "text": "rumah kat Perepat"
+  },
+  {
+   "start": 1.1,
+   "text": "dah nak siap."
+  },
+  {
+   "start": 2.3333,
+   "text": "Harga dari RM360,000 net."
+  },
+  {
+   "start": 7.3667,
+   "text": "Bulanan daripada RM1.7K."
+  },
+  {
+   "start": 10.2667,
+   "text": "Ini rumah contoh dia."
+  },
+  {
+   "start": 12.1667,
+   "text": "Jom kita tengok"
+  },
+  {
+   "start": 13.4333,
+   "text": "ada apa kat dalam."
+  },
+  {
+   "start": 14.6667,
+   "text": "Bukaan 20,"
+  },
+  {
+   "start": 15.8333,
+   "text": "darat 60,"
+  },
+  {
+   "start": 16.7,
+   "text": "3 bilik,"
+  },
+  {
+   "start": 17.5667,
+   "text": "2 bilik air."
+  },
+  {
+   "start": 18.3333,
+   "text": "This whole open"
+  },
+  {
+   "start": 19.5667,
+   "text": "to all."
+  },
+  {
+   "start": 20.2333,
+   "text": "Semua orang boleh beli."
+  },
+  {
+   "start": 21.4333,
+   "text": "wow."
+  },
+  {
+   "start": 21.9333,
+   "text": "Open concept."
+  },
+  {
+   "start": 23.3,
+   "text": "Ini bilik pertama."
+  },
+  {
+   "start": 25.2667,
+   "text": "Bilik air pertama."
+  },
+  {
+   "start": 26.6,
+   "text": "Ruang tamu."
+  },
+  {
+   "start": 27.9333,
+   "text": "unit corner."
+  },
+  {
+   "start": 28.6,
+   "text": "Ada sliding door."
+  },
+  {
+   "start": 29.5,
+   "text": "Ni meja makan."
+  },
+  {
+   "start": 30.7,
+   "text": "Bilik kedua."
+  },
+  {
+   "start": 31.6667,
+   "text": "Wow."
+  },
+  {
+   "start": 32.4,
+   "text": "Cantik."
+  },
+  {
+   "start": 33.1333,
+   "text": "Bilik air kedua."
+  },
+  {
+   "start": 34.4667,
+   "text": "Bilik ketiga."
+  },
+  {
+   "start": 35.5333,
+   "text": "You boleh jadikan"
+  },
+  {
+   "start": 36.5,
+   "text": "dia small office"
+  },
+  {
+   "start": 37.4,
+   "text": "ataupun you boleh"
+  },
+  {
+   "start": 38.9333,
+   "text": "jadikan dia sebagai bedroom."
+  },
+  {
+   "start": 40.3333,
+   "text": "Dan ini adalah dapur."
+  },
+  {
+   "start": 42.3667,
+   "text": "setiap unit ni,"
+  },
+  {
+   "start": 43.1667,
+   "text": "tengok dia datang"
+  },
+  {
+   "start": 44.2333,
+   "text": "dengan dinding ni."
+  },
+  {
+   "start": 46.0,
+   "text": "So, kalau you"
+  },
+  {
+   "start": 47.5333,
+   "text": "tak nak orang"
+  },
+  {
+   "start": 48.1333,
+   "text": "nampak dapur you,"
+  },
+  {
+   "start": 49.0,
+   "text": "you can actually"
+  },
+  {
+   "start": 49.8,
+   "text": "put up a"
+  },
+  {
+   "start": 51.0667,
+   "text": "sliding door lah"
+  },
+  {
+   "start": 52.8,
+   "text": "untuk tutup."
+  },
+  {
+   "start": 53.9667,
+   "text": "Very nice."
+  },
+  {
+   "start": 54.9667,
+   "text": "Peti ais dekat sini."
+  },
+  {
+   "start": 56.1,
+   "text": "Washing machine pun"
+  },
+  {
+   "start": 57.2,
+   "text": "dekat sini"
+  },
+  {
+   "start": 57.7333,
+   "text": "Kat belakang takde tanah."
+  },
+  {
+   "start": 59.5,
+   "text": "Terus back lane lah."
+  },
+  {
+   "start": 60.8,
+   "text": "Kalau berminat,"
+  },
+  {
+   "start": 61.7333,
+   "text": "cuba-cuba dengan saya ya."
+  }
+ ],
+ "sfx": [
+  {
+   "name": "whoosh",
+   "start": 1.5667,
+   "dur": 0.5667,
+   "vol": 0.27,
+   "track": 3
+  },
+  {
+   "name": "ping",
+   "start": 2.9333,
+   "dur": 1.3333,
+   "vol": 0.5,
+   "track": 5
+  },
+  {
+   "name": "impact-bass-1",
+   "start": 6.6,
+   "dur": 2.1,
+   "vol": 0.3,
+   "track": 6
+  },
+  {
+   "name": "pop",
+   "start": 8.4667,
+   "dur": 0.7333,
+   "vol": 0.6,
+   "track": 3
+  },
+  {
+   "name": "whoosh",
+   "start": 10.0333,
+   "dur": 0.5667,
+   "vol": 0.45,
+   "track": 5
+  },
+  {
+   "name": "click-soft",
+   "start": 10.3667,
+   "dur": 0.3667,
+   "vol": 0.48,
+   "track": 6
+  },
+  {
+   "name": "pop",
+   "start": 14.5667,
+   "dur": 0.7333,
+   "vol": 0.6,
+   "track": 3
+  },
+  {
+   "name": "ping",
+   "start": 16.4,
+   "dur": 1.3333,
+   "vol": 0.4,
+   "track": 5
+  },
+  {
+   "name": "pop",
+   "start": 17.4667,
+   "dur": 0.7333,
+   "vol": 0.6,
+   "track": 6
+  },
+  {
+   "name": "impact-bass-1",
+   "start": 19.1,
+   "dur": 2.1,
+   "vol": 0.24,
+   "track": 3
+  },
+  {
+   "name": "sparkle",
+   "start": 21.9333,
+   "dur": 1.8,
+   "vol": 0.22,
+   "track": 5
+  },
+  {
+   "name": "whoosh",
+   "start": 23.1,
+   "dur": 0.5667,
+   "vol": 0.338,
+   "track": 6
+  },
+  {
+   "name": "whoosh",
+   "start": 26.3667,
+   "dur": 0.5667,
+   "vol": 0.338,
+   "track": 3
+  },
+  {
+   "name": "pop",
+   "start": 28.0,
+   "dur": 0.7333,
+   "vol": 0.48,
+   "track": 6
+  },
+  {
+   "name": "whoosh",
+   "start": 30.5,
+   "dur": 0.5667,
+   "vol": 0.338,
+   "track": 5
+  },
+  {
+   "name": "click-soft",
+   "start": 33.2,
+   "dur": 0.3667,
+   "vol": 0.48,
+   "track": 3
+  },
+  {
+   "name": "click-soft",
+   "start": 34.6,
+   "dur": 0.3667,
+   "vol": 0.48,
+   "track": 6
+  },
+  {
+   "name": "click-soft",
+   "start": 36.6667,
+   "dur": 0.3667,
+   "vol": 0.6,
+   "track": 5
+  },
+  {
+   "name": "click-soft",
+   "start": 39.7,
+   "dur": 0.3667,
+   "vol": 0.6,
+   "track": 3
+  },
+  {
+   "name": "whoosh",
+   "start": 40.1333,
+   "dur": 0.5667,
+   "vol": 0.338,
+   "track": 6
+  },
+  {
+   "name": "pop",
+   "start": 50.9667,
+   "dur": 0.7333,
+   "vol": 0.6,
+   "track": 5
+  },
+  {
+   "name": "sparkle",
+   "start": 53.9667,
+   "dur": 1.8,
+   "vol": 0.176,
+   "track": 3
+  },
+  {
+   "name": "whoosh",
+   "start": 54.7333,
+   "dur": 0.5667,
+   "vol": 0.338,
+   "track": 6
+  },
+  {
+   "name": "pop",
+   "start": 54.8667,
+   "dur": 0.7333,
+   "vol": 0.48,
+   "track": 5
+  },
+  {
+   "name": "pop",
+   "start": 56.0,
+   "dur": 0.7333,
+   "vol": 0.48,
+   "track": 6
+  },
+  {
+   "name": "pop",
+   "start": 58.5333,
+   "dur": 0.7333,
+   "vol": 0.48,
+   "track": 5
+  },
+  {
+   "name": "pop",
+   "start": 59.9333,
+   "dur": 0.7333,
+   "vol": 0.6,
+   "track": 3
+  },
+  {
+   "name": "whoosh",
+   "start": 60.5667,
+   "dur": 0.5667,
+   "vol": 0.338,
+   "track": 6
+  },
+  {
+   "name": "chime",
+   "start": 61.3,
+   "dur": 2.5333,
+   "vol": 0.9,
+   "track": 5
+  }
+ ],
+ "overlay_times": {
+  "price_in": 3.2333,
+  "price_land": 6.5333,
+  "net": 6.6333,
+  "monthly": 8.5667,
+  "harga": 2.3333,
+  "tile1": 14.6667,
+  "tile2": 16.7,
+  "tile3": 17.5667,
+  "open_all": 19.1333,
+  "open_concept": 21.9333,
+  "corner": 28.1,
+  "office": 36.7,
+  "bedroom": 39.7333,
+  "sliding": 51.0667,
+  "dinding": 44.8667,
+  "nice": 53.9667,
+  "peti": 54.9667,
+  "mesin": 56.1,
+  "tanah": 58.6333,
+  "lane": 60.0333,
+  "cta": 60.8
+ }
+}
