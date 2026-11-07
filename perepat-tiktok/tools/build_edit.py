@@ -303,6 +303,7 @@ for i, f in enumerate(sfx):
         f'data-duration="{a(min(f["dur"], TOTAL - f["start"]))}" data-track-index="{f["track"]}" data-volume="{f["vol"]}" data-audio-group="sfx"></audio>')
 
 hosts = [
+    ("watermark", 0, TOTAL, 9, "graphics"),
     ("hook", 0, HOOK_END, 10, "graphics"),
     ("labels", 0, TOTAL, 11, "graphics"),
     ("specs", SEG["spec"]["start"], SEG["spec"]["dur"], 12, "graphics"),
@@ -582,6 +583,22 @@ ed_js = f"""      tl.fromTo("#ed-scrim", {{ opacity: 0 }}, {{ opacity: 1, durati
 open(os.path.join(ROOT, "compositions/endcard.html"), "w").write(
     scene("endcard", ed_css, ed_body, ed_js, ed_dur,
           extra_attrs=""" data-composition-variables='[{"id":"contactName","type":"string","label":"Contact name","default":"Anis"},{"id":"contactPhone","type":"string","label":"Contact phone","default":"016-602 9067"}]'"""))
+
+# ---- watermark (centre of frame, large and faded, whole video) ---------------
+WATERMARK = "aniskamalrealty"
+wm_css = """
+      #wm { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; pointer-events: none; }
+      #wm-text { position: absolute; left: 60px; top: 924px; width: 960px; text-align: center;
+        font-weight: 900; font-size: 72px; line-height: 1; letter-spacing: 0;
+        color: rgba(255,255,255,0.24); -webkit-text-stroke: 2px rgba(0,0,0,0.16); paint-order: stroke fill;
+        text-shadow: 0 2px 12px rgba(0,0,0,0.12); white-space: nowrap; }
+"""
+wm_body = f"""    <div id="wm" class="clip" data-start="0" data-duration="{a(TOTAL)}" data-layout-ignore>
+      <div id="wm-text" data-var-text="watermark">{WATERMARK}</div>
+    </div>"""
+open(os.path.join(ROOT, "compositions/watermark.html"), "w").write(
+    scene("watermark", wm_css, wm_body, "", TOTAL,
+          extra_attrs=f""" data-composition-variables='[{{"id":"watermark","type":"string","label":"Watermark","default":"{WATERMARK}"}}]'"""))
 
 # ---- captions ----------------------------------------------------------------
 cp_css = """

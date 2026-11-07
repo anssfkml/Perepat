@@ -1,0 +1,26 @@
+<template>
+  <style>
+      #root { position: absolute; inset: 0; font-family: 'Montserrat', sans-serif; color: #fff; }
+      #root, #root * { box-sizing: border-box; }
+      :root { --accent: #FFD60A; --ink: #FFFFFF; --dark: rgba(14, 16, 22, 0.88); --green: #128045; --red: #E5383B; }
+
+      #wm { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; pointer-events: none; }
+      #wm-text { position: absolute; left: 60px; top: 924px; width: 960px; text-align: center;
+        font-weight: 900; font-size: 72px; line-height: 1; letter-spacing: 0;
+        color: rgba(255,255,255,0.24); -webkit-text-stroke: 2px rgba(0,0,0,0.16); paint-order: stroke fill;
+        text-shadow: 0 2px 12px rgba(0,0,0,0.12); white-space: nowrap; }
+
+  </style>
+  <div id="root" data-composition-id="watermark" data-width="1080" data-height="1920" data-duration="67.3" data-composition-variables='[{"id":"watermark","type":"string","label":"Watermark","default":"aniskamalrealty"}]'>
+    <div id="wm" class="clip" data-start="0" data-duration="67.3" data-layout-ignore>
+      <div id="wm-text" data-var-text="watermark">aniskamalrealty</div>
+    </div>
+  </div>
+  <script>
+    (function () {
+      const tl = gsap.timeline({ paused: true });
+
+      window.__timelines["watermark"] = tl;
+    })();
+  </script>
+</template>
