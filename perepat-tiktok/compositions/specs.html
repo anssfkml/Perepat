@@ -9,21 +9,27 @@
         border-top: 8px solid var(--accent); box-shadow: 0 16px 40px rgba(0,0,0,0.35); opacity: 0; }
       .tile .n { font-family: 'Archivo Black', sans-serif; font-size: 76px; line-height: 1.05; color: #fff; }
       .tile .n small { font-size: 44px; }
+      .tile.wide { flex: 1.45; }
+      .tile.wide .n { font-size: 68px; line-height: 1.12; }
       .tile .l { margin-top: 8px; font-weight: 800; font-size: 30px; letter-spacing: 0.06em; color: var(--accent); }
-      #sp-stamp { position: absolute; left: 0; top: 590px; width: 1080px; text-align: center; }
+      #sp-lease { position: absolute; left: 0; top: 572px; width: 1080px; text-align: center; }
+      #sp-lease span { display: inline-block; background: var(--dark); color: #fff; font-weight: 900; font-size: 46px;
+        letter-spacing: 0.08em; padding: 12px 30px; border-radius: 18px; border: 4px solid var(--accent); }
+      #sp-stamp { position: absolute; left: 0; top: 670px; width: 1080px; text-align: center; }
       #sp-stamp span { display: inline-block; background: var(--green); color: #fff; font-family: 'Archivo Black', sans-serif;
         font-size: 74px; padding: 14px 40px; border-radius: 20px; border: 6px solid #fff; box-shadow: 0 16px 40px rgba(0,0,0,0.35); }
-      #sp-sub { position: absolute; left: 0; top: 740px; width: 1080px; text-align: center; font-weight: 800; font-size: 44px;
+      #sp-sub { position: absolute; left: 0; top: 818px; width: 1080px; text-align: center; font-weight: 800; font-size: 44px;
         text-shadow: 0 4px 16px rgba(0,0,0,0.8); }
 
   </style>
   <div id="root" data-composition-id="specs" data-width="1080" data-height="1920" data-duration="6.833">
     <div id="sp-card" class="clip" data-start="0" data-duration="6.833" data-layout-allow-overflow>
       <div id="sp-row">
-        <div class="tile" id="sp-t1"><div class="n">20<small>'</small>x60<small>'</small></div><div class="l">KELUASAN</div></div>
+        <div class="tile wide" id="sp-t1"><div class="n">20'x60'</div><div class="l">BUKAAN</div></div>
         <div class="tile" id="sp-t2"><div class="n">3</div><div class="l">BILIK TIDUR</div></div>
         <div class="tile" id="sp-t3"><div class="n">2</div><div class="l">BILIK AIR</div></div>
       </div>
+      <div id="sp-lease"><span id="sp-lease-in">LEASEHOLD</span></div>
       <div id="sp-stamp"><span id="sp-stamp-in">OPEN TO ALL</span></div>
       <div id="sp-sub"><span id="sp-sub-in">Semua orang boleh beli</span></div>
     </div>
@@ -34,9 +40,10 @@
       tl.fromTo("#sp-t1", { opacity: 0, y: 50, scale: 0.85 }, { opacity: 1, y: 0, scale: 1, duration: 0.4, ease: "back.out(1.5)" }, 0.133);
       tl.fromTo("#sp-t2", { opacity: 0, y: 50, scale: 0.85 }, { opacity: 1, y: 0, scale: 1, duration: 0.4, ease: "back.out(1.5)" }, 2.167);
       tl.fromTo("#sp-t3", { opacity: 0, y: 50, scale: 0.85 }, { opacity: 1, y: 0, scale: 1, duration: 0.4, ease: "back.out(1.5)" }, 3.033);
+      tl.fromTo("#sp-lease-in", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.35, ease: "expo.out" }, 3.8);
       tl.fromTo("#sp-stamp-in", { opacity: 0, scale: 2.6, rotation: -12 }, { opacity: 1, scale: 1, rotation: -4, duration: 0.24, ease: "power4.out" }, 4.6);
       tl.fromTo("#sp-sub-in", { opacity: 0 }, { opacity: 1, duration: 0.25, ease: "power2.out" }, 4.95);
-      tl.to(["#sp-t1", "#sp-t2", "#sp-t3", "#sp-stamp-in", "#sp-sub-in"], { opacity: 0, y: -30, duration: 0.18, stagger: 0.03, ease: "power3.in" }, 6.513);
+      tl.to(["#sp-t1", "#sp-t2", "#sp-t3", "#sp-lease-in", "#sp-stamp-in", "#sp-sub-in"], { opacity: 0, y: -30, duration: 0.18, stagger: 0.03, ease: "power3.in" }, 6.513);
       window.__timelines["specs"] = tl;
     })();
   </script>

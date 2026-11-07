@@ -187,11 +187,7 @@
   },
   {
    "start": 14.6667,
-   "text": "Bukaan 20,"
-  },
-  {
-   "start": 15.8333,
-   "text": "darat 60,"
+   "text": "Bukaan 20' x 60'."
   },
   {
    "start": 16.7,
@@ -203,11 +199,11 @@
   },
   {
    "start": 18.3333,
-   "text": "This whole open"
+   "text": "Leasehold,"
   },
   {
-   "start": 19.5667,
-   "text": "to all."
+   "start": 19.1333,
+   "text": "open to all."
   },
   {
    "start": 20.2333,
@@ -423,151 +419,158 @@
    "track": 6
   },
   {
+   "name": "click-soft",
+   "start": 18.3,
+   "dur": 0.3667,
+   "vol": 0.54,
+   "track": 3
+  },
+  {
    "name": "impact-bass-1",
    "start": 19.1,
    "dur": 2.1,
    "vol": 0.24,
-   "track": 3
+   "track": 5
   },
   {
    "name": "sparkle",
    "start": 21.9333,
    "dur": 1.8,
    "vol": 0.22,
-   "track": 5
+   "track": 6
   },
   {
    "name": "whoosh",
    "start": 23.1,
    "dur": 0.5667,
    "vol": 0.338,
-   "track": 6
+   "track": 3
   },
   {
    "name": "whoosh",
    "start": 26.3667,
    "dur": 0.5667,
    "vol": 0.338,
-   "track": 3
+   "track": 5
   },
   {
    "name": "pop",
    "start": 28.0,
    "dur": 0.7333,
    "vol": 0.48,
-   "track": 6
+   "track": 3
   },
   {
    "name": "whoosh",
    "start": 30.5,
    "dur": 0.5667,
    "vol": 0.338,
-   "track": 5
+   "track": 6
   },
   {
    "name": "click-soft",
    "start": 33.2,
    "dur": 0.3667,
    "vol": 0.48,
-   "track": 3
+   "track": 5
   },
   {
    "name": "click-soft",
    "start": 34.6,
    "dur": 0.3667,
    "vol": 0.48,
-   "track": 6
+   "track": 3
   },
   {
    "name": "click-soft",
    "start": 36.6667,
    "dur": 0.3667,
    "vol": 0.6,
-   "track": 5
+   "track": 6
   },
   {
    "name": "click-soft",
    "start": 39.7,
    "dur": 0.3667,
    "vol": 0.6,
-   "track": 3
+   "track": 5
   },
   {
    "name": "whoosh",
    "start": 40.1333,
    "dur": 0.5667,
    "vol": 0.338,
-   "track": 6
+   "track": 3
   },
   {
    "name": "pop",
    "start": 50.9667,
    "dur": 0.7333,
    "vol": 0.6,
-   "track": 5
+   "track": 6
   },
   {
    "name": "sparkle",
    "start": 53.9667,
    "dur": 1.8,
    "vol": 0.176,
-   "track": 3
+   "track": 5
   },
   {
    "name": "whoosh",
    "start": 54.7333,
    "dur": 0.5667,
    "vol": 0.338,
-   "track": 6
+   "track": 3
   },
   {
    "name": "pop",
    "start": 54.8667,
    "dur": 0.7333,
    "vol": 0.48,
-   "track": 5
+   "track": 6
   },
   {
    "name": "pop",
    "start": 56.0,
    "dur": 0.7333,
    "vol": 0.48,
-   "track": 6
+   "track": 3
   },
   {
    "name": "pop",
    "start": 58.5333,
    "dur": 0.7333,
    "vol": 0.48,
-   "track": 5
+   "track": 6
   },
   {
    "name": "pop",
    "start": 59.9333,
    "dur": 0.7333,
    "vol": 0.6,
-   "track": 3
+   "track": 5
   },
   {
    "name": "whoosh",
    "start": 60.5667,
    "dur": 0.5667,
    "vol": 0.338,
-   "track": 6
+   "track": 3
   },
   {
    "name": "chime",
    "start": 61.3,
    "dur": 2.5333,
    "vol": 0.9,
-   "track": 5
+   "track": 6
   },
   {
    "name": "pop",
    "start": 62.0,
    "dur": 0.7333,
    "vol": 0.6,
-   "track": 3
+   "track": 5
   }
  ],
  "overlay_times": {
@@ -580,6 +583,7 @@
   "tile2": 16.7,
   "tile3": 17.5667,
   "open_all": 19.1333,
+  "lease": 18.3333,
   "open_concept": 21.9333,
   "corner": 28.1,
   "office": 36.7,

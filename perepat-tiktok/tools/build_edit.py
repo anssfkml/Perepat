@@ -34,6 +34,8 @@ def fix_words(words):
         nxt = words[i + 1] if i + 1 < len(words) else None
         if w["t"] == "RM360" and nxt and nxt["t"] == ",000":
             w = {"t": "RM360,000", "s": w["s"], "e": nxt["e"]}; i += 1
+        elif w["t"] == "This" and nxt and nxt["t"] == "hole":
+            w = {"t": "Leasehold,", "s": w["s"], "e": nxt["e"]}; i += 1
         elif w["t"] == "RM1" and nxt and nxt["t"].startswith(".7"):
             w = {"t": "RM1.7K.", "s": w["s"], "e": nxt["e"]}; i += 1
         elif w["t"] == "belum" and nxt and nxt["t"] == "minat":
@@ -41,7 +43,7 @@ def fix_words(words):
         elif w["t"] == "cuba" and nxt and nxt["t"] == "-cuba":
             w = {"t": "cuba-cuba", "s": w["s"], "e": nxt["e"]}; i += 1
         w["t"] = {
-            "Perpat": "Perepat", "hole": "whole", "study": "sliding",
+            "Perpat": "Perepat", "20,": "20'", "darat": "x", "60,": "60'.", "study": "sliding",
             "Petit": "Peti", "ice": "ais", "blend": "lane", "tanah": "tanah.",
             "takde": "takde", "bed": "bed", "room.": "room.",
         }.get(w["t"], w["t"])
@@ -163,7 +165,8 @@ for i, w in enumerate(cap_words):
         prev = cur[-1]
         last_of_sentence = w["t"][-1] in ".?!" and len(cur) == 3 and w["s"] - prev["e"] < 0.15 and prev["t"][-1] not in ".?!,"
         if ((len(cur) >= 3 and not last_of_sentence) or prev["seg"] != w["seg"] or w["s"] - prev["e"] >= 0.15
-                or prev["t"][-1] in ".?!" or (prev["t"][-1] == "," and len(cur) >= 2)):
+                or prev["t"][-1] in ".?!" or (prev["t"][-1] == "," and len(cur) >= 2) or prev["t"] == "Leasehold,") \
+                and not (w["t"] in ("x", "60'.") and len(cur) <= 3 and prev["seg"] == w["seg"]):  # keep "Bukaan 20' x 60'" together
             groups.append(cur); cur = []
     cur.append(w)
 if cur:
@@ -197,6 +200,7 @@ T["tile1"] = word_out("spec", "Bukaan")
 T["tile2"] = word_out("spec", "3")
 T["tile3"] = word_out("spec", "2")
 T["open_all"] = word_out("spec", "open")
+T["lease"] = word_out("spec", "Leasehold")
 T["open_concept"] = word_out("open", "Open")
 T["corner"] = word_out("corner", "corner")
 T["office"] = word_out("bilik3", "small")
@@ -232,6 +236,7 @@ cue("ping", T["price_in"])
 cue("impact-bass-1", T["net"])
 cue("pop", T["monthly"])
 cue("pop", T["tile1"]); cue("ping", T["tile2"], 0.8); cue("pop", T["tile3"])
+cue("click-soft", T["lease"], 0.9)
 cue("impact-bass-1", T["open_all"], 0.8)
 cue("sparkle", T["open_concept"])
 cue("pop", T["corner"], 0.8)
@@ -504,28 +509,35 @@ sp_css = """
         border-top: 8px solid var(--accent); box-shadow: 0 16px 40px rgba(0,0,0,0.35); opacity: 0; }
       .tile .n { font-family: 'Archivo Black', sans-serif; font-size: 76px; line-height: 1.05; color: #fff; }
       .tile .n small { font-size: 44px; }
+      .tile.wide { flex: 1.45; }
+      .tile.wide .n { font-size: 68px; line-height: 1.12; }
       .tile .l { margin-top: 8px; font-weight: 800; font-size: 30px; letter-spacing: 0.06em; color: var(--accent); }
-      #sp-stamp { position: absolute; left: 0; top: 590px; width: 1080px; text-align: center; }
+      #sp-lease { position: absolute; left: 0; top: 572px; width: 1080px; text-align: center; }
+      #sp-lease span { display: inline-block; background: var(--dark); color: #fff; font-weight: 900; font-size: 46px;
+        letter-spacing: 0.08em; padding: 12px 30px; border-radius: 18px; border: 4px solid var(--accent); }
+      #sp-stamp { position: absolute; left: 0; top: 670px; width: 1080px; text-align: center; }
       #sp-stamp span { display: inline-block; background: var(--green); color: #fff; font-family: 'Archivo Black', sans-serif;
         font-size: 74px; padding: 14px 40px; border-radius: 20px; border: 6px solid #fff; box-shadow: 0 16px 40px rgba(0,0,0,0.35); }
-      #sp-sub { position: absolute; left: 0; top: 740px; width: 1080px; text-align: center; font-weight: 800; font-size: 44px;
+      #sp-sub { position: absolute; left: 0; top: 818px; width: 1080px; text-align: center; font-weight: 800; font-size: 44px;
         text-shadow: 0 4px 16px rgba(0,0,0,0.8); }
 """
 sp_body = f"""    <div id="sp-card" class="clip" data-start="0" data-duration="{a(sp_dur)}" data-layout-allow-overflow>
       <div id="sp-row">
-        <div class="tile" id="sp-t1"><div class="n">20<small>'</small>x60<small>'</small></div><div class="l">KELUASAN</div></div>
+        <div class="tile wide" id="sp-t1"><div class="n">20'x60'</div><div class="l">BUKAAN</div></div>
         <div class="tile" id="sp-t2"><div class="n">3</div><div class="l">BILIK TIDUR</div></div>
         <div class="tile" id="sp-t3"><div class="n">2</div><div class="l">BILIK AIR</div></div>
       </div>
+      <div id="sp-lease"><span id="sp-lease-in">LEASEHOLD</span></div>
       <div id="sp-stamp"><span id="sp-stamp-in">OPEN TO ALL</span></div>
       <div id="sp-sub"><span id="sp-sub-in">Semua orang boleh beli</span></div>
     </div>"""
 sp_js = f"""      tl.fromTo("#sp-t1", {{ opacity: 0, y: 50, scale: 0.85 }}, {{ opacity: 1, y: 0, scale: 1, duration: 0.4, ease: "back.out(1.5)" }}, {a(rel(T['tile1']))});
       tl.fromTo("#sp-t2", {{ opacity: 0, y: 50, scale: 0.85 }}, {{ opacity: 1, y: 0, scale: 1, duration: 0.4, ease: "back.out(1.5)" }}, {a(rel(T['tile2']))});
       tl.fromTo("#sp-t3", {{ opacity: 0, y: 50, scale: 0.85 }}, {{ opacity: 1, y: 0, scale: 1, duration: 0.4, ease: "back.out(1.5)" }}, {a(rel(T['tile3']))});
+      tl.fromTo("#sp-lease-in", {{ opacity: 0, y: 30 }}, {{ opacity: 1, y: 0, duration: 0.35, ease: "expo.out" }}, {a(rel(T['lease']))});
       tl.fromTo("#sp-stamp-in", {{ opacity: 0, scale: 2.6, rotation: -12 }}, {{ opacity: 1, scale: 1, rotation: -4, duration: 0.24, ease: "power4.out" }}, {a(rel(T['open_all']))});
       tl.fromTo("#sp-sub-in", {{ opacity: 0 }}, {{ opacity: 1, duration: 0.25, ease: "power2.out" }}, {a(rel(T['open_all']) + 0.35)});
-      tl.to(["#sp-t1", "#sp-t2", "#sp-t3", "#sp-stamp-in", "#sp-sub-in"], {{ opacity: 0, y: -30, duration: 0.18, stagger: 0.03, ease: "power3.in" }}, {a(sp_dur - 0.32)});"""
+      tl.to(["#sp-t1", "#sp-t2", "#sp-t3", "#sp-lease-in", "#sp-stamp-in", "#sp-sub-in"], {{ opacity: 0, y: -30, duration: 0.18, stagger: 0.03, ease: "power3.in" }}, {a(sp_dur - 0.32)});"""
 open(os.path.join(ROOT, "compositions/specs.html"), "w").write(scene("specs", sp_css, sp_body, sp_js, sp_dur))
 
 # ---- end card ----------------------------------------------------------------
@@ -541,7 +553,7 @@ ed_css = """
       #ed-price { margin-top: 34px; font-family: 'Archivo Black', sans-serif; font-size: 120px; line-height: 1; color: var(--accent); }
       #ed-price small { font-size: 54px; color: #fff; }
       #ed-month { margin-top: 12px; font-weight: 800; font-size: 46px; }
-      #ed-specs { margin-top: 30px; font-weight: 800; font-size: 36px; letter-spacing: 0.04em; color: rgba(255,255,255,0.9); }
+      #ed-specs { margin-top: 26px; font-weight: 800; font-size: 36px; line-height: 1.35; letter-spacing: 0.04em; color: rgba(255,255,255,0.9); }
       #ed-contact { margin: 46px auto 0; width: 820px; display: flex; align-items: center; gap: 30px; text-align: left;
         background: var(--dark); border: 5px solid var(--accent); border-radius: 36px; padding: 26px 34px;
         box-shadow: 0 18px 44px rgba(0,0,0,0.45); }
@@ -560,7 +572,7 @@ ed_body = f"""    <div id="ed-scrim" class="clip" data-start="{a(erel(T['cta']))
       <div><span id="ed-kick">RUMAH TERES &#8226; PEREPAT</span></div>
       <div id="ed-price"><small>DARI </small>RM360K<small> NET</small></div>
       <div id="ed-month">Bulanan dari ~RM1.7K</div>
-      <div id="ed-specs">3 BILIK &#8226; 2 BILIK AIR &#8226; OPEN TO ALL</div>
+      <div id="ed-specs">20'x60' &#8226; 3 BILIK &#8226; 2 BILIK AIR<br/>LEASEHOLD &#8226; OPEN TO ALL</div>
       <div id="ed-contact">
         <div id="ed-avatar"><img src="assets/anis.jpg" alt="Anis" /></div>
         <div id="ed-who">
