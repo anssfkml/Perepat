@@ -242,6 +242,7 @@ cue("pop", T["peti"], 0.8); cue("pop", T["mesin"], 0.8)
 cue("pop", T["tanah"], 0.8)
 cue("pop", T["lane"])
 cue("chime", T["cta"] + 0.9)
+cue("pop", T["cta"] + 0.1 + 1.2)
 for s in tour:
     if s["trans"] == "whoosh" and s["key"] not in ("rumah",):
         cue("whoosh", s["start"], 0.75)
@@ -540,8 +541,18 @@ ed_css = """
       #ed-price small { font-size: 54px; color: #fff; }
       #ed-month { margin-top: 12px; font-weight: 800; font-size: 46px; }
       #ed-specs { margin-top: 30px; font-weight: 800; font-size: 36px; letter-spacing: 0.04em; color: rgba(255,255,255,0.9); }
-      #ed-cta { margin-top: 44px; display: inline-block; background: var(--green); color: #fff; font-weight: 900;
-        font-size: 56px; padding: 22px 44px; border-radius: 26px; box-shadow: 0 16px 40px rgba(0,0,0,0.4); }
+      #ed-contact { margin: 46px auto 0; width: 820px; display: flex; align-items: center; gap: 30px; text-align: left;
+        background: var(--dark); border: 5px solid var(--accent); border-radius: 36px; padding: 26px 34px;
+        box-shadow: 0 18px 44px rgba(0,0,0,0.45); }
+      #ed-avatar { flex: none; width: 210px; height: 210px; border-radius: 50%; overflow: hidden;
+        border: 7px solid var(--accent); box-shadow: 0 8px 24px rgba(0,0,0,0.4); background: #222; }
+      #ed-avatar img { width: 100%; height: 100%; object-fit: cover; display: block; }
+      #ed-who { flex: 1; }
+      #ed-ask { font-weight: 900; font-size: 40px; letter-spacing: 0.06em; color: var(--accent); }
+      #ed-name { margin-top: 2px; font-weight: 900; font-size: 74px; line-height: 1.05; color: #fff; }
+      #ed-phone { margin-top: 12px; display: inline-flex; align-items: center; gap: 14px; background: var(--green);
+        color: #fff; font-weight: 900; font-size: 46px; padding: 12px 24px; border-radius: 20px; letter-spacing: 0.02em; }
+      #ed-phone svg { width: 40px; height: 40px; flex: none; }
 """
 ed_body = f"""    <div id="ed-scrim" class="clip" data-start="{a(erel(T['cta']))}" data-duration="{a(ed_dur - erel(T['cta']))}" data-layout-ignore></div>
     <div id="ed-card" class="clip" data-start="{a(erel(T['cta']))}" data-duration="{a(ed_dur - erel(T['cta']))}">
@@ -549,7 +560,14 @@ ed_body = f"""    <div id="ed-scrim" class="clip" data-start="{a(erel(T['cta']))
       <div id="ed-price"><small>DARI </small>RM360K<small> NET</small></div>
       <div id="ed-month">Bulanan dari ~RM1.7K</div>
       <div id="ed-specs">3 BILIK &#8226; 2 BILIK AIR &#8226; OPEN TO ALL</div>
-      <div id="ed-cta" data-var-text="cta">BERMINAT? DM SAYA</div>
+      <div id="ed-contact">
+        <div id="ed-avatar"><img src="assets/anis.jpg" alt="Anis" /></div>
+        <div id="ed-who">
+          <div id="ed-ask">BERMINAT?</div>
+          <div id="ed-name" data-var-text="contactName">Anis</div>
+          <div id="ed-phone"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#fff" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg><span data-var-text="contactPhone">016-602 9067</span></div>
+        </div>
+      </div>
     </div>"""
 es = erel(T["cta"]) + 0.1
 ed_js = f"""      tl.fromTo("#ed-scrim", {{ opacity: 0 }}, {{ opacity: 1, duration: 0.35, ease: "power2.out" }}, {a(es - 0.05)});
@@ -557,9 +575,13 @@ ed_js = f"""      tl.fromTo("#ed-scrim", {{ opacity: 0 }}, {{ opacity: 1, durati
       tl.fromTo("#ed-price", {{ opacity: 0, scale: 0.7 }}, {{ opacity: 1, scale: 1, duration: 0.35, ease: "back.out(1.6)" }}, {a(es + 0.3)});
       tl.fromTo("#ed-month", {{ opacity: 0 }}, {{ opacity: 1, duration: 0.25, ease: "power2.out" }}, {a(es + 0.5)});
       tl.fromTo("#ed-specs", {{ opacity: 0 }}, {{ opacity: 1, duration: 0.25, ease: "power2.out" }}, {a(es + 0.62)});
-      tl.fromTo("#ed-cta", {{ opacity: 0, y: 40, scale: 0.9 }}, {{ opacity: 1, y: 0, scale: 1, duration: 0.4, ease: "back.out(1.7)" }}, {a(es + 0.8)});"""
+      tl.fromTo("#ed-contact", {{ opacity: 0, y: 50 }}, {{ opacity: 1, y: 0, duration: 0.45, ease: "expo.out" }}, {a(es + 0.75)});
+      tl.fromTo("#ed-avatar", {{ scale: 0.4 }}, {{ scale: 1, duration: 0.45, ease: "back.out(1.8)" }}, {a(es + 0.8)});
+      tl.fromTo("#ed-name", {{ opacity: 0, filter: "blur(8px)" }}, {{ opacity: 1, filter: "blur(0px)", duration: 0.2, ease: "power4.out" }}, {a(es + 1.0)});
+      tl.fromTo("#ed-phone", {{ opacity: 0, scale: 0.7 }}, {{ opacity: 1, scale: 1, duration: 0.35, ease: "back.out(1.7)" }}, {a(es + 1.2)});"""
 open(os.path.join(ROOT, "compositions/endcard.html"), "w").write(
-    scene("endcard", ed_css, ed_body, ed_js, ed_dur))
+    scene("endcard", ed_css, ed_body, ed_js, ed_dur,
+          extra_attrs=""" data-composition-variables='[{"id":"contactName","type":"string","label":"Contact name","default":"Anis"},{"id":"contactPhone","type":"string","label":"Contact phone","default":"016-602 9067"}]'"""))
 
 # ---- captions ----------------------------------------------------------------
 cp_css = """

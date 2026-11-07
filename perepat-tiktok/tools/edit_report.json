@@ -561,6 +561,13 @@
    "dur": 2.5333,
    "vol": 0.9,
    "track": 5
+  },
+  {
+   "name": "pop",
+   "start": 62.0,
+   "dur": 0.7333,
+   "vol": 0.6,
+   "track": 3
   }
  ],
  "overlay_times": {
